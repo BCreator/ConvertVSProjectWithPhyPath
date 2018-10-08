@@ -1,4 +1,4 @@
-#include<conio.h>
+#include<conio.h> //by houstond
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <stdio.h>
@@ -136,6 +136,7 @@ int main()
 
 	//filepath += ".new";
 	doc.SaveFile(filepath.c_str());
-	cout << "修改完成！" << endl;
+	cout << "修改完成！按任意键退出。" << endl;
+	_getch();
 	return 0;
 }
