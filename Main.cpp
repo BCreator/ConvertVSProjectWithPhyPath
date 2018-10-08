@@ -1,22 +1,3 @@
-/*
-# CreateVSProjectWithPhyPath
-- ÕâÊÇ¸ö°Ñ°ÑVS Community 2017×Ô´øµÄ¡°New->Project From Existing Code...¡±£¨ÒÔÏÂ¼ò³Æ
-  PFC)Åª³ö  À´µÄ¹¤³Ì£¬Ôö¼ÓÓëÎïÀíÄ¿Â¼½á¹¹ÏàÍ¬µÄFilterÌåÏµµÄ¹¤¾ß¡£Ô­Ê¼´úÂëÀ´Ô´ÓÚÎÄÕÂ£¬
-  ¸ĞĞ»Ô­×÷Õß£º
-  https://blog.csdn.net/u012852324/article/details/49686401
-- ±¾¹¤¾ßµÄÒâÒåÖ»ÊÇÎªÁËÊ¹ÓÃVSÀ´ÔÄ¶Á´úÂë£¬Ê¹ÓÃVSµÄÒ»Ğ©ÔÚFolderºÍCMakeµÈÄ£Ê½ÏÂÎŞĞ§µÄ¹¦
-  ÄÜ£¬²¢²»ÊÇÓÃÀ´Build¡£
-- ÔËĞĞºó£¬»áÌáÊ¾ÊäÈë¹¦ÄÜfilterÂ·¾¶£¨*..vcxproj.filters£©¡£2017ÒÔÍâµÄfilters¸ñÊ½Ò²Ğí
-  Ò»Ñù£¬¶¼ÄÜÖ§³Ö£¬ÎÒÃ»»¨Ê±¼ä²âÊÔ¡£
-- ¸Ä½øÈÃËùÓĞÀàĞÍµÄÎÄ¼ş¶¼ÄÜ±»Â·¾¶»¯£¬È¥µôÁË´ÎÊıÏŞ
-  ÖÆ£¬Ö§³ÖÁËÎŞFilter×ÓµÄÇé¿ö£¨NoneÀàĞÍ£©£¬Çë¼ûÏÂÃæhoustond×¢ÊÍ¡£µ«²»ÖªµÀ»¹ÓĞÆäËûÎÊÌâ¡£
-- PFC±¾À´¾Í°ÑÎÄ¼şÄ¿Â¼µÄ´óĞ¡Ğ´×ªÂÒÁË£¬ËùÒÔ´Ë¹¤¾ß¶Ô´óĞ¡Ğ´Ò²ÊÇÂÒµÄ£¬ÔÚ·ÇWindowsµÄVS¿ÉÄÜ
-  ¾Í»áÓĞÎÊÌâ£¬ÎÒÃ»»¨Ê±¼ä²âÊÔ¡£
-- PFC¶ÔÒ»Ğ©²»Ö§³ÖµÄÎÄ¼şÊÇ²»¼ÓÈëÉú³ÉµÄ£¬Õâ¿ÉÄÜÈ¡¾öÓÚ£¬Ö´ĞĞ×ª»¯µÄÊ±ºò£¬×Ô¼º¶ÔÀ©Õ¹ÃûÁĞ±í
-  µÄÑ¡Ôñ£¬ÎÒÃ»»¨Ê±¼ä²âÊÔ¡£
-
-  by houstond
-*/
 #include<conio.h>
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -80,25 +61,25 @@ int main()
 	set<string> NewDirset;
 	char tmp[256];
 
-	cout << "ÊäÈëÎÄ¼şÃû£¡" << endl;
+	cout << "è¾“å…¥æ–‡ä»¶åï¼" << endl;
 	cin >> tmp;
 	string filepath = tmp;
 	TiXmlDocument doc(filepath.c_str());
 
 	bool b = doc.LoadFile();
 	if (!b) {
-		printf("Error: ¼ÓÔØÎÄ¼şÊ§°Ü£¡£¡°´ÈÎÒâ¼üÍË³ö¡£");//by houstond
+		printf("Error: åŠ è½½æ–‡ä»¶å¤±è´¥ï¼ï¼æŒ‰ä»»æ„é”®é€€å‡ºã€‚");//by houstond
 		_getch();
 		return 0;
 	}
-	printf("ÎÄ¼ş¼ÓÔØ³É¹¦!\n");
+	printf("æ–‡ä»¶åŠ è½½æˆåŠŸ!\n");
 	//std::cout<<doc.Value()<<std::endl;
-	TiXmlElement* project = doc.FirstChildElement();	//µÚÒ»¸öProjectÔªËØ
+	TiXmlElement* project = doc.FirstChildElement();	//ç¬¬ä¸€ä¸ªProjectå…ƒç´ 
 	//cout << project->Value() << project->Attribute("xmlns")<<endl;
-	//cout << project->FirstChild()->NextSibling()->Value();//»ñÈ¡µÚ¶ş¸ö
+	//cout << project->FirstChild()->NextSibling()->Value();//è·å–ç¬¬äºŒä¸ª
 	TiXmlElement* FirstItemGroup = project->FirstChildElement();
 
-	//²éÕÒÒÑÓĞĞÅÏ¢
+	//æŸ¥æ‰¾å·²æœ‰ä¿¡æ¯
 	{
 		TiXmlElement* Filter = FirstItemGroup->FirstChildElement();
 		//cout << Filter->Value() << endl;
@@ -108,7 +89,7 @@ int main()
 			OldDirset.insert(dir);
 		}
 	}
-	//²éÕÒÎ´Ìí¼ÓµÄ
+	//æŸ¥æ‰¾æœªæ·»åŠ çš„
 	TiXmlElement* ItemGroup = FirstItemGroup->NextSiblingElement();
 //	for (int i = 0; ItemGroup != NULL && i < 2; ItemGroup = ItemGroup->NextSiblingElement(), i++)
 	for (;ItemGroup != NULL ; ItemGroup = ItemGroup->NextSiblingElement() )
@@ -155,6 +136,6 @@ int main()
 
 	//filepath += ".new";
 	doc.SaveFile(filepath.c_str());
-	cout << "ĞŞ¸ÄÍê³É£¡" << endl;
+	cout << "ä¿®æ”¹å®Œæˆï¼" << endl;
 	return 0;
 }
