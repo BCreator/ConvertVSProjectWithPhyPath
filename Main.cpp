@@ -61,25 +61,25 @@ int main()
 	set<string> NewDirset;
 	char tmp[256];
 
-	cout << "è¾“å…¥æ–‡ä»¶åï¼" << endl;
+	cout << "ÊäÈëÎÄ¼şÃû£¡" << endl;
 	cin >> tmp;
 	string filepath = tmp;
 	TiXmlDocument doc(filepath.c_str());
 
 	bool b = doc.LoadFile();
 	if (!b) {
-		printf("Error: åŠ è½½æ–‡ä»¶å¤±è´¥ï¼ï¼æŒ‰ä»»æ„é”®é€€å‡ºã€‚");//by houstond
+		printf("Error: ¼ÓÔØÎÄ¼şÊ§°Ü£¡£¡°´ÈÎÒâ¼üÍË³ö¡£");	//by houstond
 		_getch();
 		return 0;
 	}
-	printf("æ–‡ä»¶åŠ è½½æˆåŠŸ!\n");
+	printf("ÎÄ¼ş¼ÓÔØ³É¹¦!\n");
 	//std::cout<<doc.Value()<<std::endl;
-	TiXmlElement* project = doc.FirstChildElement();	//ç¬¬ä¸€ä¸ªProjectå…ƒç´ 
+	TiXmlElement* project = doc.FirstChildElement();	//µÚÒ»¸öProjectÔªËØ
 	//cout << project->Value() << project->Attribute("xmlns")<<endl;
-	//cout << project->FirstChild()->NextSibling()->Value();//è·å–ç¬¬äºŒä¸ª
+	//cout << project->FirstChild()->NextSibling()->Value();//»ñÈ¡µÚ¶ş¸ö
 	TiXmlElement* FirstItemGroup = project->FirstChildElement();
 
-	//æŸ¥æ‰¾å·²æœ‰ä¿¡æ¯
+	//²éÕÒÒÑÓĞĞÅÏ¢
 	{
 		TiXmlElement* Filter = FirstItemGroup->FirstChildElement();
 		//cout << Filter->Value() << endl;
@@ -89,7 +89,7 @@ int main()
 			OldDirset.insert(dir);
 		}
 	}
-	//æŸ¥æ‰¾æœªæ·»åŠ çš„
+	//²éÕÒÎ´Ìí¼ÓµÄ
 	TiXmlElement* ItemGroup = FirstItemGroup->NextSiblingElement();
 //	for (int i = 0; ItemGroup != NULL && i < 2; ItemGroup = ItemGroup->NextSiblingElement(), i++)
 	for (;ItemGroup != NULL ; ItemGroup = ItemGroup->NextSiblingElement() )
@@ -136,7 +136,7 @@ int main()
 
 	//filepath += ".new";
 	doc.SaveFile(filepath.c_str());
-	cout << "ä¿®æ”¹å®Œæˆï¼æŒ‰ä»»æ„é”®é€€å‡ºã€‚" << endl;
+	cout << "ĞŞ¸ÄÍê³É£¡°´ÈÎÒâ¼üÍË³ö¡£" << endl;
 	_getch();
 	return 0;
 }

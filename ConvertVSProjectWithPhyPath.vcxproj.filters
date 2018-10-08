@@ -19,8 +19,5 @@
     <Filter Include="tinyxml">
       <UniqueIdentifier>{d02616f4-744f-49df-bb20-35aa18183b62}</UniqueIdentifier>
     </Filter>
-    <Filter Include="T">
-      <UniqueIdentifier>{85192a05-fea1-4a11-80c5-7957c8b197de}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
 </Project>
