@@ -1,6 +1,10 @@
 # ConvertVSProjectWithPhyPath
 
-- 这是个把把VS Community 2017自带的“New->Project From Existing Code...”（以下简称
+- 无论多么喜欢GNU那套东西，但不得不说VS是最好用的IDE，也对GNU体系支持的越来越好，哪
+  怕当成一个工程代码阅读器都很有用。特别是每个代码文件都可以生成轮廓，还有由其内建及
+  各种Extensions提供的有不少便于代码阅读了解代码调用关系的功能。但是很多功能不是简单
+  的打开一个代码物理目录就能激活的，还是需要是sln模式。而这个工具可以帮到这一点。
+- 这是个把VS Community 2017自带的“New->Project From Existing Code...”（以下简称
   PFC)弄出  来的工程，增加与物理目录结构相同的Filter体系的工具。原始代码来源于文章，
   感谢原作者：
   https://blog.csdn.net/u012852324/article/details/49686401
