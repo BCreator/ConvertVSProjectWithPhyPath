@@ -8,3 +8,46 @@
 - 改进让所有类型的文件都能被路径化，去掉了次数限制，支持了无Filter子的情况（None类型），请见下面houstond注释。但不知道还有其他问题。
 - PFC本来就把文件目录的大小写转乱了，所以此工具对大小写也是乱的，在非Windows的VS可能就会有问题，我没花时间测试。
 - PFC对一些不支持的文件是不加入生成的，这可能取决于，执行转化的时候，自己对扩展名列表的选择，我没花时间测试。
+
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+
+
+dasdgd
+
+
+gantt
+        dateFormat  YYYY-MM-DD
+        title Adding GANTT diagram functionality to mermaid
+        section A section
+        Completed task            :done,    des1, 2014-01-06,2014-01-08
+        Active task               :active,  des2, 2014-01-09, 3d
+        Future task               :         des3, after des2, 5d
+        Future task2               :         des4, after des3, 5d
+        section Critical tasks
+        Completed task in the critical line :crit, done, 2014-01-06,24h
+        Implement parser and jison          :crit, done, after des1, 2d
+        Create tests for parser             :crit, active, 3d
+        Future task in critical line        :crit, 5d
+        Create tests for renderer           :2d
+        Add to mermaid                      :1d
+        
+        
+gdgdgd
+
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice->John: Hello John, how are you?
+    loop Healthcheck
+        John->John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts <br/>prevail...
+    John-->Alice: Great!
+    John->Bob: How about you?
+    Bob-->John: Jolly good!
+    
+
